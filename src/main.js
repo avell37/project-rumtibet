@@ -269,6 +269,7 @@ window.addEventListener('click', function(e) {
     if (e.target === modalVideo) {
         modalVideo.style.display = 'none';
         youtubeVideo.src = '';
+        document.body.style.overflow = '';
     }
 });
 
