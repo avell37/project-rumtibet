@@ -1287,3 +1287,19 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
+#open {
+    display: block;
+}
+
+#close {
+    display: none;
+}
+
+#open.hide {
+    display: none;
+}
+
+#close.show {
+    display: block;
+}

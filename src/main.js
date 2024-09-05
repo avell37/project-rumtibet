@@ -61,15 +61,10 @@ burgerMenu.addEventListener('click', toggleBurger);
 
 function toggleBurger(e) {
     e.preventDefault();
-    const img = document.querySelector('.header-burger img');
-    console.log(img);
-    if (img.id === 'burger-icon') {
-        img.id = '';
-        img.src = 'img/burger-menu-open.svg'
-    } else {
-        img.id = 'burger-icon';
-        img.src = 'img/burger-menu-close.svg'
-    }
+    const burgerOpen = document.querySelector('#open');
+    const burgerClose = document.querySelector('#close');
+    burgerOpen.classList.toggle('hide');
+    burgerClose.classList.toggle('show');
 
     nav.classList.toggle('header-nav-active');
     burgerMenu.classList.toggle('header-burger-active');
@@ -286,12 +281,9 @@ const closeBtn = document.querySelector('.close-img');
     document.querySelectorAll('.report-img-overlay').forEach((btn, index) => {
         btn.addEventListener('click', function () {
             const imgElement = document.querySelectorAll('.report-img');
-            // console.log(this.imgElement);
             imgElement.forEach((img, i) => {
                 img.dataset.full = img.src;
             });
-
-            console.log(imgElement);
 
             const selectedImg = imgElement[index];
 
