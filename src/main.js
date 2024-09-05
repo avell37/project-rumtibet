@@ -12,7 +12,7 @@ const burgerMenu = document.querySelector('.header-burger'),
 
 // SWIPER
 
-window.addEventListener('resize', function() {
+function checkScreenWidth() {
     if (window.innerWidth <= 768) {
         newsItem.forEach(item => {
             item.classList.add('swiper-slide');
@@ -49,7 +49,11 @@ window.addEventListener('resize', function() {
             item.classList.remove('swiper-slide');
         })
     }
-});
+}
+
+document.addEventListener('DOMContentLoaded', checkScreenWidth);
+
+window.addEventListener('resize', checkScreenWidth);
 
 // BURGER MENU
 
