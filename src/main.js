@@ -279,10 +279,22 @@ const modalImg = document.getElementById('photoModal');
 const modalImgContainer = document.getElementById('modalImage');
 const closeBtn = document.querySelector('.close-img');
 
-    document.querySelectorAll('.report-img-overlay').forEach(btn => {
+    document.querySelectorAll('.report-img-overlay').forEach((btn, index) => {
         btn.addEventListener('click', function () {
+            const imgElement = document.querySelectorAll('.report-img');
+            // console.log(this.imgElement);
+            imgElement.forEach((img, i) => {
+                img.dataset.full = img.src;
+            });
+
+            console.log(imgElement);
+
+            const selectedImg = imgElement[index];
+
+            modalImgContainer.src = selectedImg.dataset.full;
+
             modalImg.style.display = 'block';
-            modalImgContainer.src = this.dataset.src;
+            
             document.body.style.overflow = 'hidden';
         });
     });
